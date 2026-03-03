@@ -1,0 +1,5 @@
+{
+  "name": "MediNexus - Multi-Tenant Hospital OS",
+  "description": "A comprehensive multi-tenant hospital management system featuring RBAC dashboards for Admins, Doctors, and Patients. Includes AI-powered symptom checking, voice-to-prescription, and real-time bed tracking.",
+  "requestFramePermissions": ["microphone"]
+}

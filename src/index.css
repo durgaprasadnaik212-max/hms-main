@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Overriding indigo to match the new palette for quick integration */
+  --color-indigo-400: #247ba0;
+  --color-indigo-500: #247ba0;
+  --color-indigo-600: #1b98e0;
+  --color-indigo-700: #006494;
+  --color-indigo-800: #13293d;
+  --color-indigo-900: #13293d;
+
+  /* Overriding blue to match the new palette */
+  --color-blue-400: #247ba0;
+  --color-blue-500: #1b98e0;
+  --color-blue-600: #006494;
+  --color-blue-700: #13293d;
+
+  /* Custom Palette */
+  --color-deep-space-blue: #13293d;
+  --color-baltic-blue: #006494;
+  --color-cerulean: #247ba0;
+  --color-blue-bell: #1b98e0;
+  --color-alice-blue: #e8f1f2;
+}
+
+:root {
+  --background: #13293d;
+  --foreground: #e8f1f2;
+  --card: rgba(232, 241, 242, 0.05);
+  --card-foreground: #e8f1f2;
+  --popover: rgba(19, 41, 61, 0.95);
+  --popover-foreground: #e8f1f2;
+  --primary: #1b98e0;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(0, 100, 148, 0.1);
+  --secondary-foreground: #e8f1f2;
+  --muted: rgba(0, 100, 148, 0.1);
+  --muted-foreground: #e8f1f2;
+  --accent: #247ba0;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: rgba(232, 241, 242, 0.15);
+  --input: rgba(232, 241, 242, 0.03);
+  --ring: #1b98e0;
+  --radius: 1rem;
+
+  /* Custom Palette Variables */
+  --deep-space-blue: #13293d;
+  --baltic-blue: #006494;
+  --cerulean: #247ba0;
+  --blue-bell: #1b98e0;
+  --alice-blue: #e8f1f2;
+}
+
+.dark {
+  --background: #13293d;
+  --foreground: #e8f1f2;
+  --card: rgba(19, 41, 61, 0.6);
+  --card-foreground: #e8f1f2;
+  --popover: rgba(19, 41, 61, 0.8);
+  --popover-foreground: #e8f1f2;
+  --primary: #1b98e0;
+  --primary-foreground: #13293d;
+  --secondary: rgba(0, 100, 148, 0.5);
+  --secondary-foreground: #e8f1f2;
+  --muted: rgba(0, 100, 148, 0.5);
+  --muted-foreground: #e8f1f2;
+  --accent: rgba(36, 123, 160, 0.5);
+  --accent-foreground: #e8f1f2;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #e8f1f2;
+  --border: rgba(232, 241, 242, 0.1);
+  --input: rgba(0, 100, 148, 0.5);
+  --ring: #1b98e0;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(45deg, #13293d 0%, #006494 33%, #247ba0 66%, #1b98e0 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: var(--alice-blue);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(232, 241, 242, 0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    @apply border border-white/10 shadow-2xl;
+  }
+  .glass-card {
+    background: rgba(232, 241, 242, 0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    @apply border border-white/10 shadow-xl rounded-2xl;
+  }
+  .glass-panel {
+    background: rgba(232, 241, 242, 0.05);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    @apply border border-white/5 shadow-lg;
+  }
+  .glass-input {
+    background: rgba(232, 241, 242, 0.03);
+    backdrop-filter: blur(12px);
+    @apply border-white/10 text-white placeholder:text-white/40 focus:bg-white/10 focus:border-white/30 transition-all;
+  }
+}
